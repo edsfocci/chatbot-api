@@ -14,6 +14,7 @@ bot.create(function(err, session) {
 
 app.get('/', function(req, res) {
   bot.ask(url.parse(req.url, true).query.text, function(err, response) {
+    console.log(response);
     res.send(response);
   });
 });
