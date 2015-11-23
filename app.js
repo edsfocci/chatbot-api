@@ -13,9 +13,8 @@ bot.create(function(err, session) {
 //chatbotUrl = "http://www.personalityforge.com/api/chat/?apiKey=bB8oGuq803pLClvv&chatBotID=64022&message=<message>&externalID=<externalID>"
 
 app.get('/', function(req, res) {
-  console.log(url.parse(req.url, true).query.text);
   bot.ask(url.parse(req.url, true).query.text, function(err, response) {
-    console.log(response);
+    res.send(response);
   });
 });
 
